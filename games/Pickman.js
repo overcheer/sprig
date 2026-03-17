@@ -5,7 +5,7 @@ https://sprig.hackclub.com/gallery/getting_started
 @title: Pickman!
 @author: overcheer
 @description: Wake up! You have been locked away in an (semi) abandoned mine for hundreds of years. Luckily you're prepared with a safety helmet, a pick, and a bad sense of humour. Can you get out and touch some grass? Nobody knows...
-@tags: [game, mine, adventure]
+@tags: [game, pacman, adventure]
 @addedOn: 2025-18-10
 */
 
@@ -31,49 +31,49 @@ const tickSprite = "t";
 const crossSprite = "c";
 const gsparkle = "s";
 const ksparkle = "q";
-const trap = "h"; // for hidden :)
+const trap = "h"; // for hidden :) 
 const heartSprite = "v";
 const pressurePlate = "j";
-const faded= "x";
+const faded = "x";
 const boulderOverlay = "i";
 const warning = "y";
 
 setLegend(
-  [ tickSprite, bitmap`
+  [tickSprite, bitmap`
 .00000000000000.
 0000000000000000
 0000000000000000
-0000000000000000
-00000000000D0000
+000000000000DD00
+00000000000DDD00
+0000000000DDD000
+000000000DDD0000
 000000000DD00000
-000000000D000000
-00000000D0000000
-00000000D0000000
-0000D00D00000000
+000DD000DD000000
+000DDD0DDD000000
+0000DDDDD0000000
 00000DDD00000000
-000000D000000000
 0000000000000000
 0000000000000000
 0000000000000000
-.00000000000000.` ],
-  [ crossSprite, bitmap`
+.00000000000000.`],
+  [crossSprite, bitmap`
 .00000000000000.
-0330000000000030
-0033300000000330
-0000330000033000
-0000033000330000
-0000003303300000
+0330000000000330
+0333300000003330
+0033330000033300
+0000333000333000
+0000033303330000
+0000003333300000
 0000000333000000
-0000000333000000
-0000003303000000
-0000033000300000
-0000330000330000
-0003300000003000
-0033000000003300
-0330000000000300
-0300000000000330
-.00000000000000.` ],
-  [ heartSprite, bitmap`
+0000033303300000
+0000333000330000
+0003330000333000
+0033300000003300
+0333000000003300
+0330000000000330
+0000000000000330
+.00000000000000.`],
+  [heartSprite, bitmap`
 0000000000000000
 0000000000000000
 0003330003333000
@@ -89,10 +89,10 @@ setLegend(
 0000033333000000
 0000003330000000
 0000000330000000
-0000000000000000` ],
+0000000000000000`],
 
 
-  [ player, bitmap`
+  [player, bitmap`
 ................
 .....66666......
 ....6FFF666.....
@@ -108,8 +108,8 @@ setLegend(
 ...6FFFFFFF6....
 ...1FFFFFFF1....
 .....6...6......
-.....0...0......` ],
-  [ door, bitmap`
+.....0...0......`],
+  [door, bitmap`
 ...1111111111...
 ..111LLLLLL111..
 .111L000000L111.
@@ -126,7 +126,7 @@ setLegend(
 .11L00000000L11.
 .11L00000000L11.
 111L00000000L111`],
-  [ warning, bitmap`
+  [warning, bitmap`
 ................
 ................
 .......33.......
@@ -142,8 +142,8 @@ setLegend(
 3333333003333333
 .33333300333333.
 ....33333333....
-......3333......` ],
-  [ gsparkle, bitmap`
+......3333......`],
+  [gsparkle, bitmap`
 ................
 ................
 ................
@@ -160,7 +160,7 @@ setLegend(
 ................
 ................
 ................`],
-  [ ksparkle, bitmap`
+  [ksparkle, bitmap`
 ................
 ................
 ................
@@ -177,7 +177,7 @@ setLegend(
 ................
 ................
 ................`],
-  [ boulderOverlay, bitmap`
+  [boulderOverlay, bitmap`
 ................
 ................
 ................
@@ -187,14 +187,14 @@ setLegend(
 .111L99999L111..
 .11L9999999L11..
 .11L9999999L11..
-.11L9993999L11..
+.11L9999999L11..
 .11L9999999L11..
 .11L9999999L11..
 .111L99999L111..
 ..111LLLLL111...
 ...111111111....
-....1111111.....` ],
-  [ pressurePlate, bitmap`
+....1111111.....`],
+  [pressurePlate, bitmap`
 ................
 .11111111111111.
 .12222222222221.
@@ -211,7 +211,7 @@ setLegend(
 .12222222222221.
 .11111111111111.
 ................`],
-  [ fog, bitmap`
+  [fog, bitmap`
 0000000000000000
 0000000000000000
 0000000000000000
@@ -227,8 +227,8 @@ setLegend(
 0000000000000000
 0000000000000000
 0000000000000000
-0000000000000000` ],
-  [ wall, bitmap`
+0000000000000000`],
+  [wall, bitmap`
 L0000000000001L0
 L0000000000001L0
 000000000LL00000
@@ -244,8 +244,8 @@ L000000LL0000000
 000000000000L100
 0000000000001000
 00L00000000000L1
-001L0000000000L1` ],
-  [ key, bitmap`
+001L0000000000L1`],
+  [key, bitmap`
 ................
 ................
 ................
@@ -262,7 +262,7 @@ L000000LL0000000
 ................
 ................
 ................`],
-  [ enemy, bitmap`
+  [enemy, bitmap`
 ................
 ................
 ......3..3......
@@ -279,7 +279,7 @@ L000000LL0000000
 ......3..3......
 ................
 ................`],
-  [ trap, bitmap`
+  [trap, bitmap`
 ................
 ................
 ......3..3......
@@ -296,7 +296,7 @@ L000000LL0000000
 ......3..3......
 ................
 ................`],
-  [ boulder, bitmap`
+  [boulder, bitmap`
 ................
 ................
 ................
@@ -312,9 +312,9 @@ L000000LL0000000
 .111L99999L111..
 ..111LLLLL111...
 ...111111111....
-....1111111.....` ],
+....1111111.....`],
 
-  [ gem, bitmap`
+  [gem, bitmap`
 L11LLLLLLLLLLLL1
 LL1LLL1LLLL107LL
 LLLLLLLLL1L01L1L
@@ -332,7 +332,7 @@ LLLL1LLLLLL1LLLL
 7LLLLLLL7L11LLLL
 LLL11LLLLLLLLL11`],
 
-  [ faded, bitmap`
+  [faded, bitmap`
 L0000000000001L0
 L0000000000001L0
 000000000LL00000
@@ -348,8 +348,8 @@ L000000LL0000000
 0000000...00L100
 00000L.....L1000
 00L0L......000L1
-001L........00L1` ],
-  [ tile1, bitmap`
+001L........00L1`],
+  [tile1, bitmap`
 LFLLLLL11LLLLL11
 LLLLLFLLLLL10LLL
 LLLLLLFLLLL01LLL
@@ -365,8 +365,8 @@ LLLLLL1LL11LLLLL
 0LLLLLL01LLFLL10
 LLFLLLL10LLLLLLL
 LLLLLLLLLLLLLLLL
-1LFLL1LLL11LLLLF` ],
-  [ tile2, bitmap`
+1LFLL1LLL11LLLLF`],
+  [tile2, bitmap`
 LLLFLLLLLLLLL10L
 LLLFLLLLLLLLF01L
 LLLLFLLLLLLLFLLL
@@ -382,7 +382,7 @@ LLLLLLLLL10LLLLL
 LLLLLLLLL01LLLLL
 01LLLLLLLLFLLLFL
 10FFLLLLLLLLLL10
-LLLFLLLLLLLLLF01` ],
+LLLFLLLLLLLLLF01`],
 
 
 
@@ -410,7 +410,7 @@ w......j..w....w
 w.............zw
 w..ww......www.w
 wwwwwwwwwwwwwwww`,
- map`
+  map`
 wwwwwwwwwwwwwwww
 w..............w
 w...........w.ww
@@ -462,29 +462,30 @@ w.........zwww.w
 w.........z....w
 wwwwwwwwwwwwwwww`,
 ]
-leal = level+1
- const base = 1 + (leal - 1) * (4 / 3);
-  const rand = Math.floor(Math.random() * 3) - 1;
-  const enemyCalc = Math.max(1, Math.round(base + rand));
+leal = level + 1
+const base = 1 + (leal - 1) * (4 / 3);
+const rand = Math.floor(Math.random() * 3) - 1;
+const enemyCalc = Math.max(1, Math.round(base + rand));
 
 
 const currentLevel = levels[level];
 setMap(currentLevel);
 
 setPushables({
-  [ player ]: [boulder, player ]
+  [player]: [boulder, player]
 })
+
 function findEmptyTile(maxAttempts = 2000) {
   const W = width();
   const H = height();
   for (let i = 0; i < maxAttempts; i++) {
     const x = Math.floor(Math.random() * W);
     const y = Math.floor(Math.random() * H);
-    if (getTile(x, y).length < 1) return {x,y };
+    if (getTile(x, y).length < 1) return { x, y };
   }
   return null;
 }
-let lastMove = {dx: 0, dy: 0};
+let lastMove = { dx: 0, dy: 0 };
 let gameOver = false;
 let testgX = null;
 let testgY = null;
@@ -499,17 +500,22 @@ const gPos = findEmptyTile();
 if (gPos) {
   gX = gPos.x;
   gY = gPos.y;
+} else {
+  console.warn("NO empty tile for gem");
 }
 
 const tPos = findEmptyTile();
 if (tPos) {
   tX = tPos.x;
   tY = tPos.y;
-} 
+} else {
+  console.warn("no empty tile for trap");
+}
 
-function playMove(){}
+function playMove() {}
 
-function addGem(){addSprite(gX, gY, gem); console.log("Gem Location: "+gX, gY)}
+function addGem() { addSprite(gX, gY, gem);
+  console.log("Gem Location: " + gX, gY) }
 a = 1
 
 function addTrap(count) {
@@ -518,6 +524,7 @@ function addTrap(count) {
   for (let i = 0; i < n; i++) {
     const pos = findEmptyTile(triesPerTrap);
     if (!pos) {
+      console.warn("addTrap- no empty tile");
       break;
     }
     addSprite(pos.x, pos.y, trap);
@@ -525,26 +532,37 @@ function addTrap(count) {
 }
 
 addGem();
-console.log("Current Level: "+ level);
+console.log("Current Level: " + level);
 
 
 function drawFog() {
   const p = getFirst(player);
   const here = getTile(p.x, p.y);
   for (let s of getAll(fog)) s.remove()
-    for (let y = 0; y < 16; y++) {
+  for (let y = 0; y < 16; y++) {
     for (let x = 0; x < 16; x++) {
       const here = getTile(x, y);
       if (seen[y][x]) {
         let want = overlay[y][x];
         if (!want) {
-          want = overlay[y][x] = Math.random() > 0.5 ? tile2 : tile1; }
+          want = overlay[y][x] = Math.random() > 0.5 ? tile2 : tile1;
+        }
         const hasCorrect = here.some(s => s.type === want);
         const hasAnyOverlay = here.some(s => s.type === tile1 || s.type === tile2);
-        if (!hasCorrect) { if (hasAnyOverlay) { for (const s of here) {
-          if (s.type === tile1 || s.type === tile2){ s.remove()}; } }
-                           addSprite(x, y, want); } } else { addSprite(x, y, fog);
-                                                           } } } }
+        if (!hasCorrect) {
+          if (hasAnyOverlay) {
+            for (const s of here) {
+              if (s.type === tile1 || s.type === tile2) { s.remove() };
+            }
+          }
+          addSprite(x, y, want);
+        }
+      } else {
+        addSprite(x, y, fog);
+      }
+    }
+  }
+}
 
 
 
@@ -568,23 +586,33 @@ function updateSeen(x, y) {
 
 
 
-function checkGem(newX,newY){
+function checkGem(newX, newY) {
 
 
   const t = getTile(newX, newY);
   const g = t.find(s => s.type === gem);
-   if (g) {
+  if (g) {
 
-     tickGem = true;
-     g.remove();
+    tickGem = true;
+    g.remove();
 
 
+  }
 }
-    }
+
+
+setInterval(() => {
+  addText("Press J to restart!", {
+  x: 1,
+  y: 2,
+  color: color`D`
+})
+}, 10000);
+
 onInput("j", () => {
 
   const currentLevel = levels[level]; // get the original map of the level
-
+  lives = lives - 1;
   // make sure the level exists before we load it
   if (currentLevel !== undefined) {
     clearText("");
@@ -593,39 +621,40 @@ onInput("j", () => {
     addTrap(enemyCalc)
   }
 });
-function checkTrap(newX,newY){
+
+function checkTrap(newX, newY) {
 
 
   const t = getTile(newX, newY);
   const g = t.find(s => s.type === trap);
-   if (g) {
+  if (g) {
 
-     lives = lives -1;
-     drawFog();
-     const currentLevel = levels[level];
-  if (currentLevel !== undefined) {
-    clearText("");
-    setMap(currentLevel);
-  }
-     g.remove();
-
-
-}
+    lives = lives - 1;
+    drawFog();
+    const currentLevel = levels[level];
+    if (currentLevel !== undefined) {
+      clearText("");
+      setMap(currentLevel);
     }
+    g.remove();
 
-function checkKey(newX,newY){
+
+  }
+}
+
+function checkKey(newX, newY) {
 
 
   const t = getTile(newX, newY);
   const k = t.find(s => s.type === key);
-   if (k) {
+  if (k) {
 
-     tickKey = true;
-     k.remove();
+    tickKey = true;
+    k.remove();
 
 
+  }
 }
-    }
 
 
 
@@ -644,15 +673,15 @@ function movePlayer(dx, dy) {
       lastMove.dy = dy;
       p.x = newX;
       p.y = newY;
-      }
-
-      updateSeen(newX, newY);
-      drawFog();
-      checkGem(newX, newY);
-      checkKey(newX,newY);
-      checkTrap(newX,newY);
-      }
     }
+
+    updateSeen(newX, newY);
+    drawFog();
+    checkGem(newX, newY);
+    checkKey(newX, newY);
+    checkTrap(newX, newY);
+  }
+}
 
 
 
@@ -702,50 +731,58 @@ const playback = playTune(hit)
 let text = "Score:" + score
 
 addText("Gem:", {
-        x: 4,
-        y: 15,
-        color: color`7`
-      })
+  x: 4,
+  y: 15,
+  color: color`7`
+})
 addText("Key:", {
-        x: 11,
-        y: 15,
-        color: color`6`
-      })
+  x: 11,
+  y: 15,
+  color: color`6`
+})
 onInput("w", () => movePlayer(0, -1))
 onInput("s", () => movePlayer(0, 1))
 onInput("a", () => movePlayer(-1, 0))
 onInput("d", () => movePlayer(1, 0))
 addSprite(6, 15, crossSprite) // adds ----------------
 addSprite(13, 15, crossSprite)
-function addgText(){
-      addText("Gem:", {
-        x: 4,
-        y: 15,
-        color: color`7`
-      });}
-function addlText(){
-      addText("Lives:", {
-        x: 9,
-        y: 0,
-        color: color`3`
-      });}
-function addLevelText(){
-      addText("LVL:"+(level+1) , {
-        x: 2,
-        y: 0,
-        color: color`2`
-      });}
-function addkText(){
 
-addText("Key:", {
-        x: 11,
-        y: 15,
-        color: color`6`
-      });}
-chance = Math.random()*10;
-console.log("Chance"+chance)
+function addgText() {
+  addText("Gem:", {
+    x: 4,
+    y: 15,
+    color: color`7`
+  });
+}
+
+function addlText() {
+  addText("Lives:", {
+    x: 9,
+    y: 0,
+    color: color`3`
+  });
+}
+
+function addLevelText() {
+  addText("LVL:" + (level + 1), {
+    x: 2,
+    y: 0,
+    color: color`2`
+  });
+}
+
+function addkText() {
+
+  addText("Key:", {
+    x: 11,
+    y: 15,
+    color: color`6`
+  });
+}
+chance = Math.random() * 10;
+console.log("Chance" + chance)
 setInterval(() => {
-  chance = Math.random()*10;
+  chance = Math.random() * 10;
 }, 800);
 addLevelText()
 setInterval(() => {
@@ -753,7 +790,9 @@ setInterval(() => {
   for (const s of getAll(gsparkle)) s.remove();
   for (const g of getAll(gem)) {
     if (chance < 0.5) {
-      addSprite(g.x, g.y, gsparkle);}}
+      addSprite(g.x, g.y, gsparkle);
+    }
+  }
 }, 400);
 
 
@@ -764,7 +803,9 @@ setInterval(() => {
   for (const s of getAll(ksparkle)) s.remove();
   for (const k of getAll(key)) {
     if (chance < 1.5) {
-      addSprite(k.x, k.y, ksparkle);}}
+      addSprite(k.x, k.y, ksparkle);
+    }
+  }
 }, 600);
 
 setInterval(() => {
@@ -772,7 +813,9 @@ setInterval(() => {
   for (const s of getAll(warning)) s.remove();
   for (const w of getAll(trap)) {
     if (chance < 1.5) {
-      addSprite(w.x, w.y, warning);}}
+      addSprite(w.x, w.y, warning);
+    }
+  }
 }, 1000);
 
 let yesd = false;
@@ -780,30 +823,33 @@ let yesd = false;
 
 setInterval(() => {
 
-  if (yesd){addText("FIND THE KEY!", {x: 4, y: 4, color: color`2`})}
+  if (yesd) { addText("FIND THE KEY!", { x: 4, y: 4, color: color`2` }) }
 
 }, 200);
 
-function gOverT(){clearText; addText("GAME OVER", {
-  x: 5,
-  y: 5,
-  color: color`3`
-});}
+function gOverT() {
+  clearText;
+  addText("GAME OVER", {
+    x: 5,
+    y: 5,
+    color: color`3`
+  });
+}
 
 
 addlText();
-for (let i = 0; i < lives; i++){
-    addSprite(13+i, 0, heartSprite);
+for (let i = 0; i < lives; i++) {
+  addSprite(13 + i, 0, heartSprite);
 
-  }
+}
 addTrap(enemyCalc)
 
 function endGame() {
   if (gameOver) return;
   gameOver = true;
 
-  try { if (typeof playback !== "undefined" && playback && playback.end) playback.end(); } catch(e) {};
-  try { if (typeof gameOverPlayback !== "undefined" && gameOverPlayback && gameOverPlayback.end) gameOverPlayback.end(); } catch(e) {};
+  try { if (typeof playback !== "undefined" && playback && playback.end) playback.end(); } catch (e) {};
+  try { if (typeof gameOverPlayback !== "undefined" && gameOverPlayback && gameOverPlayback.end) gameOverPlayback.end(); } catch (e) {};
 
   clearText();
   addText("GAME OVER", { x: 3, y: 4, color: color`3` });
@@ -823,51 +869,56 @@ function endGame() {
 
 
 afterInput(() => {
-  console.log("Tiles: "+tilesWith(trap))
-  if (lives === 0){clearText; endGame()}
+  console.log("Tiles: " + tilesWith(trap))
+  if (lives === 0) { clearText;
+    endGame() }
   const covered = tilesWith(boulder, pressurePlate); // array
-console.log("tiles", covered.length);
+  console.log("tiles", covered.length);
 
-if (covered.length >= 1) {
-  for (const t of covered) {
-    let x = t.x ?? (Array.isArray(t) ? (t[0]?.x ?? t[0]) : undefined);
-    let y = t.y ?? (Array.isArray(t) ? (t[1]?.y ?? t[1]) : undefined);
-    if (x === undefined || y === undefined) {
-      if (t && typeof t === "obect") {
-        for (const v of Obect.values(t)) {
-          if (v && typeof v.x === "number" && typeof v.y === "number") {
-            x = v.x; y = v.y; break;
+  if (covered.length >= 1) {
+    for (const t of covered) {
+      let x = t.x ?? (Array.isArray(t) ? (t[0]?.x ?? t[0]) : undefined);
+      let y = t.y ?? (Array.isArray(t) ? (t[1]?.y ?? t[1]) : undefined);
+      if (x === undefined || y === undefined) {
+        if (t && typeof t === "obect") {
+          for (const v of Obect.values(t)) {
+            if (v && typeof v.x === "number" && typeof v.y === "number") {
+              x = v.x;
+              y = v.y;
+              break;
+            }
           }
         }
       }
-    }
-    if (typeof x !== "number" || typeof y !== "number") continue;
-    for (const s of [...getTile(x, y)]) {
-      if (s.type === boulder) s.remove();
-    }
-    addSprite(x, y, boulderOverlay);
-    const ding = tune`
+      if (typeof x !== "number" || typeof y !== "number") continue;
+      for (const s of [...getTile(x, y)]) {
+        if (s.type === boulder) s.remove();
+      }
+      addSprite(x, y, boulderOverlay);
+      const ding = tune`
 500: C4~500,
 15500`
-    playTune(ding)
+      playTune(ding)
 
+    }
   }
-}
 
   currentLevelB4 = levels[level];
-  for (let i = 0; i < lives; i++){
-    addSprite(13+i, 0, heartSprite);
+  for (let i = 0; i < lives; i++) {
+    addSprite(13 + i, 0, heartSprite);
 
   }
 
-  if ((tilesWith(door, player).length>=1) && (tickKey === false)){
+  if ((tilesWith(door, player).length >= 1) && (tickKey === false)) {
     console.log("tried to pass")
-    yesd = true;}
-  else{yesd = false}
+    yesd = true;
+  } else { yesd = false }
 
 
-  const gtx = 6, gty = 15;
-  const ktx = 13, kty = 15;
+  const gtx = 6,
+    gty = 15;
+  const ktx = 13,
+    kty = 15;
   for (const s of [...getTile(gtx, gty)]) {
     if (s.type === crossSprite || s.type === tickSprite) s.remove();
   }
@@ -889,48 +940,47 @@ if (covered.length >= 1) {
   addlText();
   addkText();
   addLevelText()
-  if (gameOver){gOverT()}
+  if (gameOver) { gOverT() }
   const targetNumber = tilesWith(pressurePlate).length;
 
 
   const numberCovered = tilesWith(pressurePlate, boulderOverlay).length;
-  if (tilesWith(door, player).length === 1){
-    if (tickKey){
-    if (numberCovered===targetNumber){
-       const diiing = tune`
+  if (tilesWith(door, player).length === 1) {
+    if (tickKey) {
+      if (numberCovered === targetNumber) {
+        const diiing = tune`
 500,
 500: B5^500,
 15000`
-      playTune(diiing)
-      level = level + 1;
-      tickKey = false;
-      tickGem = false;
-    const currentLevel = levels[level];
-    ;
-    // make sure the level exists and if so set the map
-    // otherwise, we have finished the last level, there is no level
-    // after the last level
-    if (currentLevel !== undefined) {
-      setMap(currentLevel);
-      wX = Math.floor(Math.random() * width());
-      hX = Math.floor(Math.random() * width());
-      addGem()
-      addTrap(enemyCalc)
-      seen = Array(16).fill().map(() => Array(16).fill(false));
-overlay = Array(16).fill().map(() => Array(16).fill(null));
-for (const s of [...getAll(fog), ...getAll(tile1), ...getAll(tile2), ...getAll(gsparkle), ...getAll(ksparkle)]) {
-  s.remove();
-}
+        playTune(diiing)
+        level = level + 1;
+        tickKey = false;
+        tickGem = false;
+        const currentLevel = levels[level];;
+        // make sure the level exists and if so set the map
+        // otherwise, we have finished the last level, there is no level
+        // after the last level
+        if (currentLevel !== undefined) {
+          setMap(currentLevel);
+          wX = Math.floor(Math.random() * width());
+          hX = Math.floor(Math.random() * width());
+          addGem()
+          addTrap(enemyCalc)
+          seen = Array(16).fill().map(() => Array(16).fill(false));
+          overlay = Array(16).fill().map(() => Array(16).fill(null));
+          for (const s of [...getAll(fog), ...getAll(tile1), ...getAll(tile2), ...getAll(gsparkle), ...getAll(ksparkle)]) {
+            s.remove();
+          }
 
 
-const start = getFirst(player);
-if (start) {
-  updateSeen(start.x, start.y);
+          const start = getFirst(player);
+          if (start) {
+            updateSeen(start.x, start.y);
 
-  drawFog();
-}
-    } else {
-      const winT = tune`
+            drawFog();
+          }
+        } else {
+          const winT = tune`
 115.38461538461539,
 115.38461538461539: C5^115.38461538461539,
 115.38461538461539,
@@ -950,15 +1000,12 @@ if (start) {
 115.38461538461539,
 115.38461538461539: B5~115.38461538461539,
 1384.6153846153848`;
-      addText("You win!", {x: 7, y: 4, color: color`4` });
-      playback.end()
-      playTune(winT)
+          addText("You win!", { x: 7, y: 4, color: color`4` });
+          playback.end()
+          playTune(winT)
+        }
+      } else if (numberCovered !== targetNumber) { addText("MOVE THE BOULDER", { x: 2, y: 4, color: color`2` }) }
     }
-    }
-     else if (numberCovered!==targetNumber){addText("MOVE THE BOULDER", {x: 2, y: 4, color: color`2`})}
+
   }
-
-                                                }
 });
-
-
